@@ -37,6 +37,11 @@ app.disable('x-powered-by'); // deshabilitar el header X-Powered-By: Express
 // CORS PRE-Flight
 // OPTIONS
 
+// Add the root route handler here
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Movies API' });
+});
+
 // Todos los recursos que sean MOVIES se identifica con /movies
 app.get('/movies', (req, res) => {
   const { genre } = req.query;
